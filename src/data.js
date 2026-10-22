@@ -1,22 +1,22 @@
-// Pictures loaded from your pictures folder without any captions
+// 14 Special Pictures with clean ASCII filenames (100% reliable across iOS Safari, Android Chrome, and Render)
 export const USER_PICTURES = [
-  "WhatsApp Image 2026-10-22 at 16.02.03.jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.03 (1).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.03 (2).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.04.jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.04 (1).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.04 (2).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.04 (3).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.04 (4).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.05.jpeg",
-  "WhatsApp Image 2026-10-22 at 16.02.05 (1).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.07.51.jpeg",
-  "WhatsApp Image 2026-10-22 at 16.07.51 (1).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.07.51 (2).jpeg",
-  "WhatsApp Image 2026-10-22 at 16.07.52.jpeg"
+  "photo_01.jpeg",
+  "photo_02.jpeg",
+  "photo_03.jpeg",
+  "photo_04.jpeg",
+  "photo_05.jpeg",
+  "photo_06.jpeg",
+  "photo_07.jpeg",
+  "photo_08.jpeg",
+  "photo_09.jpeg",
+  "photo_10.jpeg",
+  "photo_11.jpeg",
+  "photo_12.jpeg",
+  "photo_13.jpeg",
+  "photo_14.jpeg"
 ].map((filename, index) => ({
   id: index + 1,
-  image: `/pictures/${encodeURIComponent(filename)}`
+  image: `/pictures/${filename}`
 }));
 
 export const SECRET_LETTER = {

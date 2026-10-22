@@ -95,6 +95,12 @@ export default function MusicPlayer() {
         playsInline
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onEnded={() => {
+          if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(console.error);
+          }
+        }}
       />
 
       {/* Floating Music Pill (Android/iPhone mobile friendly with safe-area spacing) */}

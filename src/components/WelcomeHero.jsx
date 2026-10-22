@@ -16,25 +16,7 @@ export default function WelcomeHero({ onStartJourney, onLock }) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[400px] md:w-[500px] h-[260px] sm:h-[400px] md:h-[500px] rounded-full border border-dashed border-rose-500/30 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[280px] md:w-[350px] h-[180px] sm:h-[280px] md:h-[350px] rounded-full bg-gradient-to-tr from-rose-950/40 via-red-900/20 to-transparent blur-2xl pointer-events-none" />
 
-      {/* Top micro navbar */}
-      <div className="absolute top-6 left-6 right-6 flex items-center justify-between max-w-6xl mx-auto w-full z-20">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-rose-950/80 border border-rose-500/30 flex items-center justify-center">
-            <Heart className="w-4 h-4 text-rose-400 fill-rose-400/80" />
-          </div>
-          <span className="font-cinzel text-xs sm:text-sm font-bold tracking-widest text-rose-100 uppercase">
-            Memory Vault
-          </span>
-        </div>
 
-        <button
-          onClick={onLock}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/40 hover:bg-rose-950/60 border border-white/10 hover:border-rose-500/30 text-[11px] text-rose-300 transition-colors cursor-pointer"
-        >
-          <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
-          <span>Lock</span>
-        </button>
-      </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
