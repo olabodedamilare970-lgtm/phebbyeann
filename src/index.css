@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    /* Remove tap highlight on Android/iOS */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  html {
+    /* Smooth momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    /* Prevent pull-to-refresh on Android Chrome */
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    background-color: #0d0202;
+    color: #fce7f3;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport for mobile browsers */
+    /* iPhone notch / safe area support */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: block;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-playfair {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0202;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a0808;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6e0f1a;
+}
+
+/* Glowing animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.35), 0 0 45px rgba(159, 18, 57, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(244, 63, 94, 0.6), 0 0 70px rgba(225, 29, 72, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes ambientSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.animate-float-soft {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+.animate-ambient-spin {
+  animation: ambientSpin 25s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(22, 5, 8, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-elevated {
+  background: rgba(30, 7, 12, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(251, 113, 133, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(190, 18, 60, 0.25);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, rgba(159, 18, 57, 0.4) 0%, rgba(88, 8, 26, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  box-shadow: 0 4px 20px rgba(159, 18, 57, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  background: linear-gradient(135deg, rgba(190, 18, 60, 0.6) 0%, rgba(136, 19, 55, 0.8) 100%);
+  border-color: rgba(251, 113, 133, 0.6);
+  box-shadow: 0 8px 30px rgba(225, 29, 72, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Music equalizer bar animation */
+@keyframes musicBar {
+  0%, 100% { height: 3px; }
+  25%       { height: 12px; }
+  50%       { height: 6px; }
+  75%       { height: 14px; }
+}
+
+.music-bar {
+  display: inline-block;
+  width: 3px;
+  height: 6px;
+  border-radius: 9999px;
+  animation: musicBar 1s ease-in-out infinite;
+}
