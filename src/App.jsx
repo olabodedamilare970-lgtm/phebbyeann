@@ -6,6 +6,7 @@ import TimeCounter from './components/TimeCounter';
 import MemoriesGallery from './components/MemoriesGallery';
 import InteractiveLetter from './components/InteractiveLetter';
 import MusicPlayer from './components/MusicPlayer';
+import SurpriseToast from './components/SurpriseToast';
 import { Heart, Lock, Sparkles, ArrowLeft } from 'lucide-react';
 
 export default function App() {
@@ -96,6 +97,9 @@ export default function App() {
 
           {/* 5. Background Music Player (auto-starts on memories scroll/touch) */}
           <MusicPlayer />
+
+          {/* 6. 30-Second Sweet Surprise Reminder Toast */}
+          <SurpriseToast />
 
           {/* Footer */}
           <footer
